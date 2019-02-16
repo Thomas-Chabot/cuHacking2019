@@ -1,10 +1,13 @@
 import React, {Component} from "react";
+import VerticalFlex from "./flex/Vertical.js";
 import "./css/Container.css";
 
 class Container extends Component {
   render(){
     return <div id="container">
-      {this.props.children}
+      <VerticalFlex>
+        {this.props.children}
+      </VerticalFlex>
     </div>;
   }
 }

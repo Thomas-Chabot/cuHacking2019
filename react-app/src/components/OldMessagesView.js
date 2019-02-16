@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Message from "./Message.js";
+import VerticalFlex from "./flex/Vertical.js";
 
 import "./css/OldMessagesView.css";
 
@@ -25,8 +26,10 @@ class OldMessagesView extends Component {
                rowType={index % 2 === 0 ? "dark" : "light"} />
     );
 
-    return <div id="OldMessagesView">
-      {messages}
+    return <div id="OldMessagesView" className="flex-grow">
+      <div className="messages-container">
+        {messages}
+      </div>
     </div>;
   }
 }

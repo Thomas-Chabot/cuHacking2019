@@ -1,13 +1,15 @@
 .TextEntryBoxContainer{
   width: 100%;
-  height: 120px;
+  flex-grow: 1;
 }
 .TextEntryBox{
-  width: 100%;
-  height: 100px;
+  width: calc(100% - 2px);
   word-wrap: break-word;
+
+  flex-grow: 4;
 }
 .SendMessageButton{
   width: 100%;
-  height: 20px;
+  
+  flex-grow: 1;
 }

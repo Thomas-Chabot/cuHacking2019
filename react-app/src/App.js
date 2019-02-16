@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Container from "./components/Container.js";
+import ContentWindow from "./components/ContentWindow.js";
 import WarningsView from "./components/WarningsView.js"
 import TextEntryBox from "./components/TextEntryBox.js";
 import OldMessagesView from "./components/OldMessagesView.js";
@@ -11,14 +12,9 @@ class App extends Component {
   }
   handleSendMessage = event => {
     let text = this._textbox.value;
-    
+
     this._textbox.clear();
     this._olderMessages.addMessage(text);
-  }
-
-  componentDidMount(){
-    this._olderMessages.addMessage("TestNG 1");
-    this._olderMessages.addMessage("TestNG 2");
   }
 
   render() {
@@ -39,8 +35,11 @@ class App extends Component {
               Learn React
             </a>
           </header>*/}
-          <WarningsView />
-          <OldMessagesView ref={(e)=>{ this._olderMessages=e; }} />
+          <ContentWindow>
+            <WarningsView />
+            <OldMessagesView ref={(e)=>{ this._olderMessages=e; }} />
+          </ContentWindow>
+
           <TextEntryBox placeholder="test" ref={(e)=>{ this._textbox=e; }}
             OnTextChange={this.handleTextChange}
             OnSendMessage={this.handleSendMessage} />

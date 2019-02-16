@@ -1,7 +1,8 @@
 .row{
-  width: 100%;
-  text-align: left;
+  flex-grow: 1;
+  height: 20px;
 }
+
 .row-dark{
   background-color: darkgray;
 }
@@ -10,5 +11,6 @@
 }
 
 .message{
+  overflow: hidden;
   font-size: 13px;
 }

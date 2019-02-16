@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import VerticalFlex from "./flex/Vertical.js";
 import "./css/TextEntryBox.css";
 
 class TextEntryBox extends Component {
@@ -25,12 +26,14 @@ class TextEntryBox extends Component {
 
   render(){
     return <div className="TextEntryBoxContainer">
-      <textarea className="TextEntryBox" type="text"
-                value={this.state.value}
-                placeholder={this.props.placeholder}
-                ref={(e)=>{ this._textbox = e; }}
-                onChange={this.handleChange} />
-      <input className="SendMessageButton" type="button" value="Send Message" onClick={this.handleClick} />
+      <VerticalFlex>
+        <textarea className="TextEntryBox" type="text"
+                  value={this.state.value}
+                  placeholder={this.props.placeholder}
+                  ref={(e)=>{ this._textbox = e; }}
+                  onChange={this.handleChange} />
+        <input className="SendMessageButton" type="button" value="Send Message" onClick={this.handleClick} />
+      </VerticalFlex>
     </div>
   }
 }
