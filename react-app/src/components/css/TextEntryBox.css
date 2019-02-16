@@ -1,15 +1,15 @@
-.TextEntryBoxContainer{
+.entry-container{
   width: 100%;
   flex-grow: 1;
 }
-.TextEntryBox{
+.entry-box{
   width: calc(100% - 2px);
   word-wrap: break-word;
 
-  flex-grow: 4;
+  flex-grow: 6;
 }
-.SendMessageButton{
+.send-button{
   width: 100%;
-  
+
   flex-grow: 1;
 }

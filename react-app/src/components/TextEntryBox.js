@@ -25,14 +25,14 @@ class TextEntryBox extends Component {
   }
 
   render(){
-    return <div className="TextEntryBoxContainer">
+    return <div className="entry-container flex-grow">
       <VerticalFlex>
-        <textarea className="TextEntryBox" type="text"
+        <textarea className="entry-box" type="text"
                   value={this.state.value}
                   placeholder={this.props.placeholder}
                   ref={(e)=>{ this._textbox = e; }}
                   onChange={this.handleChange} />
-        <input className="SendMessageButton" type="button" value="Send Message" onClick={this.handleClick} />
+        <input className="send-button" type="button" value="Send Message" onClick={this.handleClick} />
       </VerticalFlex>
     </div>
   }

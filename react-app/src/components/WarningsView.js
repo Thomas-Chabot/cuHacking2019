@@ -4,7 +4,7 @@ import "./css/WarningsView.css";
 
 class WarningsView extends Component {
   render(){
-    return <div id="warningsView">
+    return <div id="WarningsView">
       <FlexGrid>
 
       </FlexGrid>
