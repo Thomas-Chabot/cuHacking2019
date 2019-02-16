@@ -9,9 +9,13 @@ class App extends Component {
   handleTextChange = event => {
     console.log(event.target.value);
   }
+  handleSendMessage = event => {
+    console.log("Send a message: ", this._textbox.value);
+  }
 
   componentDidMount(){
-    //this._olderMessages.addMessage("TestNG");
+    this._olderMessages.addMessage("TestNG 1");
+    this._olderMessages.addMessage("TestNG 2");
   }
 
   render() {
@@ -34,7 +38,9 @@ class App extends Component {
           </header>*/}
           <WarningsView />
           <OldMessagesView ref={(e)=>{ this._olderMessages=e; }} />
-          <TextEntryBox placeholder="test" OnTextChange={this.handleTextChange} />
+          <TextEntryBox placeholder="test" ref={(e)=>{ this._textbox=e; }}
+            OnTextChange={this.handleTextChange}
+            OnSendMessage={this.handleSendMessage} />
         </Container>
       </div>
     );

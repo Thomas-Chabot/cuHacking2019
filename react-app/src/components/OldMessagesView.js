@@ -12,12 +12,18 @@ class OldMessagesView extends Component {
   }
 
   addMessage(message){
-    this.setState({
-      messages: this.state.messages.concat({message})
+    this.setState((prevState)=>{
+      return {
+        messages: prevState.messages.concat({message})
+      }
     });
   }
+
   render(){
-    let messages = this.state.messages.map((data)=><Message text={data.message} />);
+    let messages = this.state.messages.map((data, index)=>
+      <Message key={"message-" + index} text={data.message}
+               rowType={index % 2 === 0 ? "dark" : "light"} />
+    );
 
     return <div id="OldMessagesView">
       {messages}
