@@ -3,4 +3,5 @@
   height: 250px;
 
   float: right;
+  overflow-y: auto;
 }

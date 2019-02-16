@@ -6,11 +6,14 @@ import TextEntryBox from "./components/TextEntryBox.js";
 import OldMessagesView from "./components/OldMessagesView.js";
 
 class App extends Component {
-  handleTextChange = event => {
-    console.log(event.target.value);
+  handleTextChange = value => {
+    console.log(value);
   }
   handleSendMessage = event => {
-    console.log("Send a message: ", this._textbox.value);
+    let text = this._textbox.value;
+    
+    this._textbox.clear();
+    this._olderMessages.addMessage(text);
   }
 
   componentDidMount(){

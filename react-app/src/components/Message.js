@@ -3,10 +3,11 @@ import "./css/Message.css";
 
 class Message extends Component {
   render(){
+    let content = this.props.text.split("\n").map((text)=>{
+      return <div className="message">{text}</div>;
+    });
     return <div className={"row row-" + this.props.rowType}>
-      <span className="message">
-        {this.props.text}
-      </span>
+      {content}
     </div>;
   }
 }

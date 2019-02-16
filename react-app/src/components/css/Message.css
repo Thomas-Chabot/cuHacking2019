@@ -12,7 +12,3 @@
 .message{
   font-size: 13px;
 }
-
-.message::before{
-  content: "- ";
-}
