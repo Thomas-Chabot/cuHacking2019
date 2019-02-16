@@ -1,0 +1,13 @@
+.TextEntryBoxContainer{
+  width: 100%;
+  height: 120px;
+}
+.TextEntryBox{
+  width: 100%;
+  height: 100px;
+  word-wrap: break-word;
+}
+.SendMessageButton{
+  width: 100%;
+  height: 20px;
+}
