@@ -1,3 +1,6 @@
 .DS_Store
 .idea/
 *.iml
+__pycache__/
+data/wiki.en.vec
+data/embeddings.h5
