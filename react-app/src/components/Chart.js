@@ -49,12 +49,14 @@ class Chart extends Component {
    }
 
 
-		return <div class="chart-div" ref={(e)=>{this._main=e;}}>
-			<CanvasJSChart options = {options}
-				/* onRef={ref => this.chart = ref} */
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>;
+		return <div className="chart-div-main">
+      <div className="chart-div" ref={(e)=>{this._main=e;}}>
+  			<CanvasJSChart options = {options}
+  				/* onRef={ref => this.chart = ref} */
+  			/>
+  			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+  		</div>
+    </div>;
 	}
 }
 
