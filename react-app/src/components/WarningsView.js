@@ -16,6 +16,10 @@ class WarningsView extends Component {
     this.databoxes.addDataPoint(name, value);
   }
 
+  reset(){
+    this.chart.reset();
+    this.databoxes.reset();
+  }
 
   render(){
     return <div id="WarningsView">

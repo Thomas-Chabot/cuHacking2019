@@ -3,7 +3,7 @@ import "./css/Message.css";
 
 class Message extends Component {
   handleClick = event => {
-    console.log("Click");
+    this.props.onClick(this.props.data);
   }
 
   render(){

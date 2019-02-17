@@ -8,7 +8,7 @@ class Warning extends Component {
   }
   render(){
     return <span className="warning-box" >
-      <input type="checkbox" checked={this.check()} value={this.props.name} readonly="readonly" />
+      <input type="checkbox" checked={this.check()} value={this.props.name} readOnly="readonly" />
       <label className="warning-label">{this.props.name}</label>
     </span>
   }
@@ -28,10 +28,15 @@ class Warnings extends Component {
     });
   }
 
+  reset(){
+    this.setState({
+      warnings: [ ]
+    });
+  }
+
   render(){
-    let data = this.state.warnings.map((warning)=>{
-      console.log(warning);
-      return <Warning name={warning.name} dataValue={warning.value} />
+    let data = this.state.warnings.map((warning, i)=>{
+      return <Warning name={warning.name} dataValue={warning.value} key={i} />
     });
 
     return <div className="warnings-box">

@@ -35,6 +35,10 @@ class Chart extends Component {
     })
   }
 
+  reset(){
+    this.setState({data: [ ]});
+  }
+
 	render() {
     const options = {
       title: {
