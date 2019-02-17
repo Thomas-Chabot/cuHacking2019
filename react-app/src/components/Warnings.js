@@ -3,9 +3,15 @@ import VerticalFlex from "./flex/Vertical.js";
 import "./css/Warnings.css";
 
 class Warning extends Component {
+  constructor(props){
+    super(props);
+    this.minValue = 0.5;
+  }
+
   check(){
     return this.props.dataValue > this.minValue;
   }
+
   render(){
     return <span className="warning-box" >
       <input type="checkbox" checked={this.check()} value={this.props.name} readOnly="readonly" />
