@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import VerticalFlex from "./flex/Vertical.js";
+import EntryPopup from "./EntryPopup.js";
 import "./css/TextEntryBox.css";
 
 class TextEntryBox extends Component {
@@ -7,34 +8,46 @@ class TextEntryBox extends Component {
     super(props);
 
     this.state = {
-      value: ""
+      value: "",
+      expanded: false
     };
   }
 
   get value(){ return this._textbox.value; }
-  set value(t){ this.setState({value: t}); }
 
-  clear(){ this.value = ""; }
-
-  handleChange = event => {
-    this.value = event.target.value;
-    this.props.OnTextChange(this.value);
+  clear(){
+    if (!this._textbox)
+      return;
+    this._textbox.clear();
   }
-  handleClick = event => {
-    this.props.OnSendMessage(event);
+
+  expand(){
+    this.setState({expanded: true})
+  }
+  minimize(){
+    this.setState({expanded: false});
+  }
+
+  handleChange = value => {
+    this.props.OnTextChange(value);
+  }
+  handleClick = value => {
+    this.minimize();
+    this.props.OnSendMessage(value);
+  }
+  startAnimating = event => {
+    this.setState({expanded: true});
   }
 
   render(){
-    return <div className="entry-container flex-grow">
-      <VerticalFlex>
-        <textarea className="entry-box" type="text"
-                  value={this.state.value}
-                  placeholder={this.props.placeholder}
-                  ref={(e)=>{ this._textbox = e; }}
-                  onChange={this.handleChange} />
-        <input className="send-button" type="button" value="Send Message" onClick={this.handleClick} />
-      </VerticalFlex>
-    </div>
+    if (this.state.expanded){
+      //return <EntryPopup />;
+      return <EntryPopup ref={(e)=>{this._textbox = e;}}
+                         OnSendMessage={this.handleClick}
+                         OnTextChange={this.handleChange} />;
+    }
+
+    return <input className="entry-box-small" type="text" onClick={this.startAnimating} />
   }
 }
 

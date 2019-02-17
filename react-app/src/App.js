@@ -10,11 +10,9 @@ class App extends Component {
   handleTextChange = value => {
     console.log(value);
   }
-  handleSendMessage = event => {
-    let text = this._textbox.value;
-
+  handleSendMessage = value => {
     this._textbox.clear();
-    this._olderMessages.addMessage(text);
+    this._olderMessages.addMessage(value);
   }
 
   render() {
@@ -35,14 +33,15 @@ class App extends Component {
               Learn React
             </a>
           </header>*/}
-          <ContentWindow>
-            <WarningsView />
-            <OldMessagesView ref={(e)=>{ this._olderMessages=e; }} />
-          </ContentWindow>
 
           <TextEntryBox placeholder="test" ref={(e)=>{ this._textbox=e; }}
             OnTextChange={this.handleTextChange}
             OnSendMessage={this.handleSendMessage} />
+
+          <ContentWindow>
+            <OldMessagesView ref={(e)=>{ this._olderMessages=e; }} />
+            <WarningsView />
+          </ContentWindow>
         </Container>
       </div>
     );

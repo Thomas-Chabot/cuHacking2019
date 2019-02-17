@@ -1,15 +1,10 @@
-.entry-container{
+.entry-box-small{
   width: 100%;
-  flex-grow: 1;
-}
-.entry-box{
-  width: calc(100% - 2px);
-  word-wrap: break-word;
+  height: 15px;
+  flex: initial;
 
-  flex-grow: 6;
-}
-.send-button{
-  width: 100%;
+  border-radius: 5px;
+  margin: auto;
 
-  flex-grow: 1;
+  background-color: var(--textarea-bg);
 }

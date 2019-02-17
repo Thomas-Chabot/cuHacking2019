@@ -36,3 +36,9 @@
   display: flex;
   flex-basis: 0;
 }
+
+
+/* Themes */
+body[data-theme='light']{
+  --textarea-bg: rgb(244,244,244);
+}

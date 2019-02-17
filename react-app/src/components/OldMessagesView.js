@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import Message from "./Message.js";
-import VerticalFlex from "./flex/Vertical.js";
 
 import "./css/OldMessagesView.css";
 
@@ -15,7 +14,7 @@ class OldMessagesView extends Component {
   addMessage(message){
     this.setState((prevState)=>{
       return {
-        messages: prevState.messages.concat({message})
+        messages: [{message}].concat(...prevState.messages)
       }
     });
   }
